@@ -1,7 +1,8 @@
 import React from "react";
+import Header from "../components/Header";
 import EmployeeTable from "../components/EmployeeTable";
 
-const EmployeeList = () => {
+function EmployeeList() {
   const employees = [
     {
       id: "EMP001",
@@ -13,32 +14,25 @@ const EmployeeList = () => {
     {
       id: "EMP002",
       name: "Jane Smith",
-      department: "Human Resources",
+      department: "HR",
       designation: "HR Manager",
-      status: "Active",
-    },
-    {
-      id: "EMP003",
-      name: "Robert Johnson",
-      department: "Finance",
-      designation: "Accountant",
       status: "Inactive",
     },
     {
-      id: "EMP004",
-      name: "Emily Davis",
-      department: "Marketing",
-      designation: "Marketing Lead",
+      id: "EMP003",
+      name: "David Lee",
+      department: "Finance",
+      designation: "Accountant",
       status: "Active",
     },
   ];
 
   return (
     <div className="container">
-      <h1 className="page-title">Employee Directory</h1>
+      <Header />
       <EmployeeTable employees={employees} />
     </div>
   );
-};
+}
 
 export default EmployeeList;

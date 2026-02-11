@@ -7,9 +7,17 @@ function EmployeeRow({ employee }) {
       <td>{employee.name}</td>
       <td>{employee.department}</td>
       <td>{employee.designation}</td>
-      <td>{employee.status}</td>
       <td>
-        <button>View</button>
+        <span
+          className={
+            employee.status === "Active" ? "status active" : "status inactive"
+          }
+        >
+          {employee.status}
+        </span>
+      </td>
+      <td>
+        <button className="view-btn">View</button>
       </td>
     </tr>
   );

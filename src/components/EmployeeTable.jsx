@@ -1,6 +1,7 @@
 import React from "react";
+import EmployeeRow from "./EmployeeRow";
 
-const EmployeeTable = ({ employees }) => {
+function EmployeeTable({ employees }) {
   return (
     <div className="table-wrapper">
       <table className="employee-table">
@@ -16,31 +17,12 @@ const EmployeeTable = ({ employees }) => {
         </thead>
         <tbody>
           {employees.map((emp) => (
-            <tr key={emp.id}>
-              <td>{emp.id}</td>
-              <td>{emp.name}</td>
-              <td>{emp.department}</td>
-              <td>{emp.designation}</td>
-              <td>
-                <span
-                  className={
-                    emp.status === "Active"
-                      ? "status active"
-                      : "status inactive"
-                  }
-                >
-                  {emp.status}
-                </span>
-              </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
+            <EmployeeRow key={emp.id} employee={emp} />
           ))}
         </tbody>
       </table>
     </div>
   );
-};
+}
 
 export default EmployeeTable;
